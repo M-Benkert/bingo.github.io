@@ -1,0 +1,216 @@
+:root {
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #172033;
+    background: #f4f6f8;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+button, input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app-shell {
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 24px 0;
+}
+
+.hero {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    line-height: .92;
+    letter-spacing: -.05em;
+}
+
+.saved-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 0 0 auto;
+    padding: 8px 14px;
+    border: 1px solid #e1e5ea;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .8);
+    color: #667085;
+    font-size: .78rem;
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+.saved-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #2ecc71;
+}
+
+.card {
+    border: 1px solid #e0e4e9;
+    border-radius: 22px;
+    background: #fff;
+    box-shadow: 0 12px 35px rgba(25, 35, 50, .055);
+}
+
+.controls-card {
+    display: flex;
+    padding: 12px;
+    margin-bottom: 18px;
+}
+
+.controls-card .button {
+    width: 100%;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 10px 18px;
+    border: 0;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: .9rem;
+    white-space: nowrap;
+    transition: all .15s ease;
+    touch-action: manipulation;
+}
+
+.button--primary {
+    background: #172033;
+    color: white;
+}
+
+.button--primary:active {
+    transform: scale(0.98);
+}
+
+.bingo-message {
+    display: none;
+    margin-bottom: 18px;
+    padding: 14px 18px;
+    border-radius: 16px;
+    background: #edf8f0;
+    border: 1px solid #c2e9cb;
+    color: #226436;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.board-card {
+    padding: clamp(12px, 2.5vw, 24px);
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.cell {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    padding: 6px;
+    border: 1px solid #dfe3e8;
+    border-radius: 14px;
+    background: #f8f9fa;
+    color: #293346;
+    font-size: clamp(.62rem, 2.2vw, .88rem);
+    font-weight: 650;
+    line-height: 1.25;
+    text-align: center;
+    overflow: hidden;
+    user-select: none;
+    word-break: break-word;
+    hyphens: auto;
+    transition: transform .12s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease;
+    touch-action: manipulation;
+}
+
+.cell:active {
+    transform: scale(0.96);
+}
+
+.cell--marked {
+    background: #172033;
+    border-color: #172033;
+    color: #ffffff;
+}
+
+.cell--winner {
+    background: #172033;
+    color: #ffffff;
+    border-color: #2ecc71;
+    box-shadow: 0 0 0 3px #2ecc71;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 20px;
+    padding: 0 4px;
+    color: #98a2b3;
+    font-size: .78rem;
+}
+
+@media (max-width: 600px) {
+    .app-shell {
+        width: min(100% - 20px, 1180px);
+        padding: 18px 0;
+    }
+
+    .hero {
+        align-items: flex-start;
+        margin-bottom: 16px;
+    }
+
+    .controls-card {
+        padding: 10px;
+    }
+
+    .board {
+        gap: 5px;
+    }
+
+    .cell {
+        padding: 3px;
+        border-radius: 8px;
+        font-size: clamp(.55rem, 2.7vw, .75rem);
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 6px;
+    }
+}

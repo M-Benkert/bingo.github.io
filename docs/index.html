@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>Custom Bingo</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<main class="app-shell">
+    <!-- Header -->
+    <header class="hero">
+        <h1>Bingo</h1>
+        <div class="saved-badge">
+            <span class="saved-dot"></span>
+            Saved locally
+        </div>
+    </header>
+
+    <!-- Controls -->
+    <section class="card controls-card">
+        <button id="regenerateBtn" class="button button--primary">New Board</button>
+    </section>
+
+    <!-- Victory Banner -->
+    <div id="bingoBanner" class="bingo-message">
+        🎉 BINGO! You formed <span id="winCountMessage">0</span> winning line(s)!
+    </div>
+
+    <!-- 5x5 Grid -->
+    <section class="card board-card">
+        <div id="bingoBoard" class="board"></div>
+    </section>
+
+    <!-- Footer Explanation -->
+    <footer class="footer">
+        <span>5x5 Random Layout</span>
+        <span>Tap tiles to toggle marked state</span>
+    </footer>
+</main>
+
+<!-- External JS Dependencies -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="words.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

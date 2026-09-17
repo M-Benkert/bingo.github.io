@@ -1,0 +1,9 @@
+services:
+  webseite:
+    build: .
+    container_name: custom-bingo
+    ports:
+      - "8080:80"
+    volumes:
+      - ./docs:/usr/share/nginx/html:ro
+    restart: always
